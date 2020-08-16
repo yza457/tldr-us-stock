@@ -1,0 +1,13 @@
+#
+####### example-requirements.txt #######
+#
+###### Requirements without Version Specifiers ######
+#
+###### Requirements with Version Specifiers ######
+#   See https://www.python.org/dev/peps/pep-0440/#version-specifiers
+django == 3.1
+djangorestframework == 3.11.1
+pike == 0.1.1
+pika == 1.1.0
+tweepy == 3.9.0
+textblob == 0.15.3
