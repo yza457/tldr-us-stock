@@ -66,15 +66,13 @@ package ['rabbitmq-server']
 execute 'go get github.com/streadway/amqp' do
   cwd project_go_location
   user username
-  environment 'HOME' => user_home
-  creates project_go_location + '/src/github.com/streadway/amqp/README.md'
+  environment "GOPATH" => project_go_location
 end
 
 execute 'go get github.com/piquette/finance-go' do
   cwd project_go_location
   user username
-  environment 'HOME' => user_home
-  creates project_go_location + '/src/github.com/piquette/finance-go/README.md'
+  environment "GOPATH" => project_go_location
 end
 
 # install pipenv
