@@ -44,12 +44,12 @@ package 'golang-go'  # Go
 
 # NodeJS (more modern than Ubuntu nodejs package) and NPM
 remote_file '/opt/installers/node-setup.sh' do
- source 'https://deb.nodesource.com/setup_14.x'
- mode '0755'
+  source 'https://deb.nodesource.com/setup_14.x'
+  mode '0755'
 end
 execute '/opt/installers/node-setup.sh' do
- creates '/etc/apt/sources.list.d/nodesource.list'
- notifies :run, 'execute[apt-get update]', :immediately
+  creates '/etc/apt/sources.list.d/nodesource.list'
+  notifies :run, 'execute[apt-get update]', :immediately
 end
 package ['nodejs']
 
@@ -64,11 +64,17 @@ package ['rabbitmq-server']
 
 # Go amqp, go-finance,  library
 execute 'go get github.com/streadway/amqp' do
- cwd project_go_location
+  cwd project_go_location
+  user username
+  environment 'HOME' => user_home
+  creates project_go_location + '/src/github.com/streadway/amqp/README.md'
 end
 
 execute 'go get github.com/piquette/finance-go' do
- cwd project_go_location
+  cwd project_go_location
+  user username
+  environment 'HOME' => user_home
+  creates project_go_location + '/src/github.com/piquette/finance-go/README.md'
 end
 
 # install pipenv
