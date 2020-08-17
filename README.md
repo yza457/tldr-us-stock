@@ -1,8 +1,6 @@
-# CMPT 383 Project
+# tl;dr us stock
 
 *Name: Yang Zhang*
-
-*SFU ID: 301356155*
 
 ## Get the project working
 
@@ -19,11 +17,12 @@ $ vagrant ssh
 $ cd project/
 
 # use the provided script to start the project
+# the script will setup gopath, start golang RPC server
+# and start the Django web server
 $ ./startserver.sh
 
 # if success, both the golang RPC server and django web server
 # should start similar to this:
-
 # Watching for file changes with StatReloader
 # Performing system checks...
 # 2020/08/16 22:19:36  [*] Awaiting RPC requests
