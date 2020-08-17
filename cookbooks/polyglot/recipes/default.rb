@@ -78,7 +78,7 @@ end
 # end
 
 # install dependencies for react
-execute 'npm install' do
+execute 'npm install --no-bin-links' do
 	cwd project_home
 end
 
