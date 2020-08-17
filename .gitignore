@@ -9,3 +9,6 @@ log/*
 .bundle
 
 node_modules
+
+/tldrusstock/tldr/stockData/goGetStockData/pkg/linux_amd64/github.com/
+/tldrusstock/tldr/stockData/goGetStockData/src/github.com/

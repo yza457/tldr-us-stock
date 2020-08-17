@@ -87,6 +87,10 @@ execute 'pip3 install -r requirements.txt' do
   cwd project_home
 end
 
+execute 'sed -i -e \'s/\r$//\' .\/startserver.sh' do
+  cwd project_home
+end
+
 # execute 'pipenv --python 3.6' do
 #   cwd project_home
 # end
